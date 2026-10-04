@@ -8,6 +8,13 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
+        PaymentServise p  = context.getBean(PaymentServise.class);
+        p.pay();
+
+
+        OrderService order = context.getBean(OrderService.class);
+        order.placeorder();
+
 
 
         }
