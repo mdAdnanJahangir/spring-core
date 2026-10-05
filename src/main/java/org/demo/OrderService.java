@@ -3,12 +3,13 @@ package org.demo;
 
 import org.demo.payments.PaymentServise;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-
+@Scope("prototype")
 @Component
 public class OrderService {
-    @Autowired
-    private PaymentServise payment ;
+//    @Autowired
+//    private PaymentServise payment ;
 
 //
 //    public OrderService(PaymentServise payment) {
@@ -20,10 +21,14 @@ public class OrderService {
 //        this.payment = payment;
 //    }
 
+    OrderService(){
+        System.out.println("object created ");
+    }
+
     void placeorder(){
 
 
-        payment.pay();
+       // payment.pay();
 
         System.out.println(" order placed ");
     }
